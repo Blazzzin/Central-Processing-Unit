@@ -1,0 +1,47 @@
+|ALU3
+Clock => ~NO_FANOUT~
+A[0] => ~NO_FANOUT~
+A[1] => ~NO_FANOUT~
+A[2] => ~NO_FANOUT~
+A[3] => ~NO_FANOUT~
+A[4] => ~NO_FANOUT~
+A[5] => ~NO_FANOUT~
+A[6] => ~NO_FANOUT~
+A[7] => ~NO_FANOUT~
+B[0] => ~NO_FANOUT~
+B[1] => ~NO_FANOUT~
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+B[4] => ~NO_FANOUT~
+B[5] => ~NO_FANOUT~
+B[6] => ~NO_FANOUT~
+B[7] => ~NO_FANOUT~
+student_id[0] => Result[3].DATAIN
+student_id[0] => Result[2].DATAIN
+student_id[0] => Result[1].DATAIN
+student_id[0] => Result[0].DATAIN
+student_id[1] => ~NO_FANOUT~
+student_id[2] => ~NO_FANOUT~
+student_id[3] => ~NO_FANOUT~
+OP[0] => ~NO_FANOUT~
+OP[1] => ~NO_FANOUT~
+OP[2] => ~NO_FANOUT~
+OP[3] => ~NO_FANOUT~
+OP[4] => ~NO_FANOUT~
+OP[5] => ~NO_FANOUT~
+OP[6] => ~NO_FANOUT~
+OP[7] => ~NO_FANOUT~
+OP[8] => ~NO_FANOUT~
+OP[9] => ~NO_FANOUT~
+OP[10] => ~NO_FANOUT~
+OP[11] => ~NO_FANOUT~
+OP[12] => ~NO_FANOUT~
+OP[13] => ~NO_FANOUT~
+OP[14] => ~NO_FANOUT~
+OP[15] => ~NO_FANOUT~
+Result[0] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

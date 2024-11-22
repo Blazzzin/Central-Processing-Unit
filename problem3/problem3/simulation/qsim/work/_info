@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\exper\Desktop\COE328 Labs\Lab 6\problem3\problem3\simulation\qsim
+vproblem3
+Z1 IK3feSbg2YaM?NmhQ>nFbR1
+Z2 VI>Z[532o;mEjk>=`Q3d`U3
+Z3 dC:\Users\exper\Desktop\COE328 Labs\Lab 6\problem3\problem3\simulation\qsim
+Z4 w1701282490
+Z5 8problem3.vo
+Z6 Fproblem3.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|problem3.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 58>R:bd^9Io5Fe]7lH:Vi1
+!s85 0
+Z11 !s108 1701282490.898000
+Z12 !s107 problem3.vo|
+!s101 -O0
+vproblem3_vlg_sample_tst
+!i10b 1
+Z13 !s100 J1Z?F4BO^QdfzhU6Zb<0X3
+Z14 Il;AHj2NYo<bJXOhg7IYYW1
+Z15 V1Qii7ieiH;CcmFbD8PJEO2
+R3
+w1701282489
+Z16 8problem3.vt
+Z17 Fproblem3.vt
+L0 29
+R7
+r1
+!s85 0
+31
+!s108 1701282490.985000
+!s107 problem3.vt|
+Z18 !s90 -work|work|problem3.vt|
+!s101 -O0
+R9

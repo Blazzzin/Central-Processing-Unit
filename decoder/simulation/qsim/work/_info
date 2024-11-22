@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\exper\Desktop\COE328 Labs\Lab 6\decoder\simulation\qsim
+v\4to16decoder 
+!i10b 1
+Z1 !s100 eRWhi^dDNb7DSKmZV:cIU3
+Z2 IZ=9DO3NA_DZaLDhhUYPSQ2
+Z3 VI]>MT74=H=Vdc7VG>9lA31
+dC:\Users\sahee\OneDrive\Desktop\COE328\Lab 6\decoder\simulation\qsim
+w1701053646
+Z4 8decoder.vo
+Z5 Fdecoder.vo
+L0 31
+Z6 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1701053647.399000
+!s107 decoder.vo|
+Z7 !s90 -work|work|decoder.vo|
+!s101 -O0
+Z8 o-work work -O0
+Z9 n@1344to16decoder@040

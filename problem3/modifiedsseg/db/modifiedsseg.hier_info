@@ -1,0 +1,17 @@
+|modifiedsseg
+bcd[0] => ~NO_FANOUT~
+bcd[1] => ~NO_FANOUT~
+bcd[2] => ~NO_FANOUT~
+bcd[3] => leds1[3].DATAIN
+bcd[3] => leds1[6].DATAIN
+bcd[3] => leds1[0].DATAIN
+bcd[3] => leds1[4].DATAIN
+leds1[6] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+leds1[5] <= <GND>
+leds1[4] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+leds1[3] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+leds1[2] <= <GND>
+leds1[1] <= <GND>
+leds1[0] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

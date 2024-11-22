@@ -1,0 +1,400 @@
+|problem3
+student_id[6] <= sseg:inst4.leds1[6]
+student_id[5] <= sseg:inst4.leds1[5]
+student_id[4] <= sseg:inst4.leds1[4]
+student_id[3] <= sseg:inst4.leds1[3]
+student_id[2] <= sseg:inst4.leds1[2]
+student_id[1] <= sseg:inst4.leds1[1]
+student_id[0] <= sseg:inst4.leds1[0]
+Clock => fsm:inst2.clk
+Clock => ALU3:inst56.Clock
+Clock => latch1:inst.Clock
+Clock => latch1:inst1.Clock
+data_in => fsm:inst2.data_in
+FSM_reset => fsm:inst2.reset
+y/n[6] <= modifiedsseg:inst7.leds1[6]
+y/n[5] <= modifiedsseg:inst7.leds1[5]
+y/n[4] <= modifiedsseg:inst7.leds1[4]
+y/n[3] <= modifiedsseg:inst7.leds1[3]
+y/n[2] <= modifiedsseg:inst7.leds1[2]
+y/n[1] <= modifiedsseg:inst7.leds1[1]
+y/n[0] <= modifiedsseg:inst7.leds1[0]
+Reset_A => latch1:inst.Resetn
+A[0] => latch1:inst.A[0]
+A[1] => latch1:inst.A[1]
+A[2] => latch1:inst.A[2]
+A[3] => latch1:inst.A[3]
+A[4] => latch1:inst.A[4]
+A[5] => latch1:inst.A[5]
+A[6] => latch1:inst.A[6]
+A[7] => latch1:inst.A[7]
+Reset_B => latch1:inst1.Resetn
+B[0] => latch1:inst1.A[0]
+B[1] => latch1:inst1.A[1]
+B[2] => latch1:inst1.A[2]
+B[3] => latch1:inst1.A[3]
+B[4] => latch1:inst1.A[4]
+B[5] => latch1:inst1.A[5]
+B[6] => latch1:inst1.A[6]
+B[7] => latch1:inst1.A[7]
+Enable_Decoder => 4to16decoder:inst3.En
+
+
+|problem3|sseg:inst4
+bcd[0] => Mux0.IN19
+bcd[0] => Mux1.IN19
+bcd[0] => Mux2.IN19
+bcd[0] => Mux3.IN19
+bcd[0] => Mux4.IN19
+bcd[0] => Mux5.IN19
+bcd[0] => Mux6.IN19
+bcd[1] => Mux0.IN18
+bcd[1] => Mux1.IN18
+bcd[1] => Mux2.IN18
+bcd[1] => Mux3.IN18
+bcd[1] => Mux4.IN18
+bcd[1] => Mux5.IN18
+bcd[1] => Mux6.IN18
+bcd[2] => Mux0.IN17
+bcd[2] => Mux1.IN17
+bcd[2] => Mux2.IN17
+bcd[2] => Mux3.IN17
+bcd[2] => Mux4.IN17
+bcd[2] => Mux5.IN17
+bcd[2] => Mux6.IN17
+bcd[3] => Mux0.IN16
+bcd[3] => Mux1.IN16
+bcd[3] => Mux2.IN16
+bcd[3] => Mux3.IN16
+bcd[3] => Mux4.IN16
+bcd[3] => Mux5.IN16
+bcd[3] => Mux6.IN16
+neg => leds2[6].DATAIN
+leds1[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds1[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds1[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds1[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds1[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds1[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds1[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+leds2[6] <= neg.DB_MAX_OUTPUT_PORT_TYPE
+leds2[5] <= <VCC>
+leds2[4] <= <VCC>
+leds2[3] <= <VCC>
+leds2[2] <= <VCC>
+leds2[1] <= <VCC>
+leds2[0] <= <VCC>
+
+
+|problem3|fsm:inst2
+clk => yfsm~1.DATAIN
+data_in => Selector0.IN3
+data_in => Selector1.IN3
+data_in => Selector2.IN3
+data_in => Selector3.IN3
+data_in => Selector4.IN3
+data_in => Selector5.IN3
+data_in => Selector6.IN3
+data_in => Selector7.IN3
+data_in => Selector8.IN3
+data_in => Selector9.IN3
+data_in => Selector10.IN3
+data_in => Selector0.IN1
+data_in => Selector1.IN1
+data_in => Selector2.IN1
+data_in => Selector3.IN1
+data_in => Selector4.IN1
+data_in => Selector5.IN1
+data_in => Selector6.IN1
+data_in => Selector7.IN1
+data_in => Selector8.IN1
+data_in => Selector9.IN1
+data_in => Selector10.IN1
+reset => yfsm~3.DATAIN
+student_id[0] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+student_id[1] <= student_id.DB_MAX_OUTPUT_PORT_TYPE
+student_id[2] <= student_id.DB_MAX_OUTPUT_PORT_TYPE
+student_id[3] <= <GND>
+current_state[0] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+current_state[1] <= WideOr15.DB_MAX_OUTPUT_PORT_TYPE
+current_state[2] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
+current_state[3] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|modifiedsseg:inst7
+bcd[0] => ~NO_FANOUT~
+bcd[1] => ~NO_FANOUT~
+bcd[2] => ~NO_FANOUT~
+bcd[3] => leds1[3].DATAIN
+bcd[3] => leds1[6].DATAIN
+bcd[3] => leds1[0].DATAIN
+bcd[3] => leds1[4].DATAIN
+leds1[6] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+leds1[5] <= <GND>
+leds1[4] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+leds1[3] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+leds1[2] <= <GND>
+leds1[1] <= <GND>
+leds1[0] <= bcd[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|ALU3:inst56
+Clock => ~NO_FANOUT~
+A[0] => ~NO_FANOUT~
+A[1] => ~NO_FANOUT~
+A[2] => ~NO_FANOUT~
+A[3] => ~NO_FANOUT~
+A[4] => ~NO_FANOUT~
+A[5] => ~NO_FANOUT~
+A[6] => ~NO_FANOUT~
+A[7] => ~NO_FANOUT~
+B[0] => ~NO_FANOUT~
+B[1] => ~NO_FANOUT~
+B[2] => ~NO_FANOUT~
+B[3] => ~NO_FANOUT~
+B[4] => ~NO_FANOUT~
+B[5] => ~NO_FANOUT~
+B[6] => ~NO_FANOUT~
+B[7] => ~NO_FANOUT~
+student_id[0] => Result[3].DATAIN
+student_id[0] => Result[2].DATAIN
+student_id[0] => Result[1].DATAIN
+student_id[0] => Result[0].DATAIN
+student_id[1] => ~NO_FANOUT~
+student_id[2] => ~NO_FANOUT~
+student_id[3] => ~NO_FANOUT~
+OP[0] => ~NO_FANOUT~
+OP[1] => ~NO_FANOUT~
+OP[2] => ~NO_FANOUT~
+OP[3] => ~NO_FANOUT~
+OP[4] => ~NO_FANOUT~
+OP[5] => ~NO_FANOUT~
+OP[6] => ~NO_FANOUT~
+OP[7] => ~NO_FANOUT~
+OP[8] => ~NO_FANOUT~
+OP[9] => ~NO_FANOUT~
+OP[10] => ~NO_FANOUT~
+OP[11] => ~NO_FANOUT~
+OP[12] => ~NO_FANOUT~
+OP[13] => ~NO_FANOUT~
+OP[14] => ~NO_FANOUT~
+OP[15] => ~NO_FANOUT~
+Result[0] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= student_id[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|latch1:inst
+A[0] => Q[0]~reg0.DATAIN
+A[1] => Q[1]~reg0.DATAIN
+A[2] => Q[2]~reg0.DATAIN
+A[3] => Q[3]~reg0.DATAIN
+A[4] => Q[4]~reg0.DATAIN
+A[5] => Q[5]~reg0.DATAIN
+A[6] => Q[6]~reg0.DATAIN
+A[7] => Q[7]~reg0.DATAIN
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Resetn => Q[4]~reg0.ACLR
+Resetn => Q[5]~reg0.ACLR
+Resetn => Q[6]~reg0.ACLR
+Resetn => Q[7]~reg0.ACLR
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|latch1:inst1
+A[0] => Q[0]~reg0.DATAIN
+A[1] => Q[1]~reg0.DATAIN
+A[2] => Q[2]~reg0.DATAIN
+A[3] => Q[3]~reg0.DATAIN
+A[4] => Q[4]~reg0.DATAIN
+A[5] => Q[5]~reg0.DATAIN
+A[6] => Q[6]~reg0.DATAIN
+A[7] => Q[7]~reg0.DATAIN
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Resetn => Q[4]~reg0.ACLR
+Resetn => Q[5]~reg0.ACLR
+Resetn => Q[6]~reg0.ACLR
+Resetn => Q[7]~reg0.ACLR
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|4to16decoder:inst3
+y[15] <= 3to8decoder:inst2.output2[3]
+y[14] <= 3to8decoder:inst2.output2[2]
+y[13] <= 3to8decoder:inst2.output2[1]
+y[12] <= 3to8decoder:inst2.output2[0]
+y[11] <= 3to8decoder:inst2.output1[3]
+y[10] <= 3to8decoder:inst2.output1[2]
+y[9] <= 3to8decoder:inst2.output1[1]
+y[8] <= 3to8decoder:inst2.output1[0]
+y[7] <= 3to8decoder:inst.output2[3]
+y[6] <= 3to8decoder:inst.output2[2]
+y[5] <= 3to8decoder:inst.output2[1]
+y[4] <= 3to8decoder:inst.output2[0]
+y[3] <= 3to8decoder:inst.output1[3]
+y[2] <= 3to8decoder:inst.output1[2]
+y[1] <= 3to8decoder:inst.output1[1]
+y[0] <= 3to8decoder:inst.output1[0]
+w[0] => 3to8decoder:inst.w[0]
+w[0] => 3to8decoder:inst2.w[0]
+w[1] => 3to8decoder:inst.w[1]
+w[1] => 3to8decoder:inst2.w[1]
+w[2] => 3to8decoder:inst.w2
+w[2] => 3to8decoder:inst2.w2
+w[3] => inst3.IN0
+w[3] => inst5.IN1
+En => inst4.IN1
+En => inst5.IN0
+
+
+|problem3|4to16decoder:inst3|3to8decoder:inst
+output1[3] <= decoder:inst.y[3]
+output1[2] <= decoder:inst.y[2]
+output1[1] <= decoder:inst.y[1]
+output1[0] <= decoder:inst.y[0]
+w2 => inst2.IN0
+w2 => inst4.IN1
+En => inst3.IN1
+En => inst4.IN0
+w[0] => decoder:inst.w[0]
+w[0] => decoder:inst1.w[0]
+w[1] => decoder:inst.w[1]
+w[1] => decoder:inst1.w[1]
+output2[3] <= decoder:inst1.y[3]
+output2[2] <= decoder:inst1.y[2]
+output2[1] <= decoder:inst1.y[1]
+output2[0] <= decoder:inst1.y[0]
+
+
+|problem3|4to16decoder:inst3|3to8decoder:inst|decoder:inst
+w[0] => Mux0.IN10
+w[0] => Mux1.IN10
+w[0] => Mux2.IN10
+w[0] => Mux3.IN10
+w[1] => Mux0.IN9
+w[1] => Mux1.IN9
+w[1] => Mux2.IN9
+w[1] => Mux3.IN9
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|4to16decoder:inst3|3to8decoder:inst|decoder:inst1
+w[0] => Mux0.IN10
+w[0] => Mux1.IN10
+w[0] => Mux2.IN10
+w[0] => Mux3.IN10
+w[1] => Mux0.IN9
+w[1] => Mux1.IN9
+w[1] => Mux2.IN9
+w[1] => Mux3.IN9
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|4to16decoder:inst3|3to8decoder:inst2
+output1[3] <= decoder:inst.y[3]
+output1[2] <= decoder:inst.y[2]
+output1[1] <= decoder:inst.y[1]
+output1[0] <= decoder:inst.y[0]
+w2 => inst2.IN0
+w2 => inst4.IN1
+En => inst3.IN1
+En => inst4.IN0
+w[0] => decoder:inst.w[0]
+w[0] => decoder:inst1.w[0]
+w[1] => decoder:inst.w[1]
+w[1] => decoder:inst1.w[1]
+output2[3] <= decoder:inst1.y[3]
+output2[2] <= decoder:inst1.y[2]
+output2[1] <= decoder:inst1.y[1]
+output2[0] <= decoder:inst1.y[0]
+
+
+|problem3|4to16decoder:inst3|3to8decoder:inst2|decoder:inst
+w[0] => Mux0.IN10
+w[0] => Mux1.IN10
+w[0] => Mux2.IN10
+w[0] => Mux3.IN10
+w[1] => Mux0.IN9
+w[1] => Mux1.IN9
+w[1] => Mux2.IN9
+w[1] => Mux3.IN9
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|problem3|4to16decoder:inst3|3to8decoder:inst2|decoder:inst1
+w[0] => Mux0.IN10
+w[0] => Mux1.IN10
+w[0] => Mux2.IN10
+w[0] => Mux3.IN10
+w[1] => Mux0.IN9
+w[1] => Mux1.IN9
+w[1] => Mux2.IN9
+w[1] => Mux3.IN9
+En => Mux0.IN8
+En => Mux1.IN8
+En => Mux2.IN8
+En => Mux3.IN8
+y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

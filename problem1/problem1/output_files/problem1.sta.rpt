@@ -1,0 +1,1329 @@
+TimeQuest Timing Analyzer report for problem1
+Wed Nov 29 14:25:31 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'Clock'
+ 12. Slow Model Hold: 'Clock'
+ 13. Slow Model Minimum Pulse Width: 'Clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'Clock'
+ 24. Fast Model Hold: 'Clock'
+ 25. Fast Model Minimum Pulse Width: 'Clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; problem1                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 200.92 MHz ; 200.92 MHz      ; Clock      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clock ; -3.977 ; -31.792       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; Clock ; 0.544 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; Clock ; -1.380 ; -37.380               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clock'                                                                                              ;
++--------+-------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -3.977 ; latch1:inst4|Q[1] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 5.013      ;
+; -3.870 ; latch1:inst5|Q[0] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.906      ;
+; -3.844 ; latch1:inst5|Q[2] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.881      ;
+; -3.820 ; latch1:inst4|Q[0] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.856      ;
+; -3.778 ; latch1:inst5|Q[0] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.815      ;
+; -3.770 ; latch1:inst4|Q[1] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.807      ;
+; -3.756 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.796      ;
+; -3.753 ; latch1:inst4|Q[0] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.790      ;
+; -3.752 ; latch1:inst5|Q[1] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.788      ;
+; -3.727 ; latch1:inst5|Q[2] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.763      ;
+; -3.717 ; latch1:inst4|Q[1] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.754      ;
+; -3.698 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.739      ;
+; -3.698 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.738      ;
+; -3.694 ; latch1:inst4|Q[2] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.730      ;
+; -3.691 ; latch1:inst5|Q[1] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.728      ;
+; -3.680 ; latch1:inst4|Q[1] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.717      ;
+; -3.678 ; latch1:inst5|Q[2] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.715      ;
+; -3.658 ; latch1:inst4|Q[3] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.694      ;
+; -3.652 ; latch1:inst4|Q[2] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.689      ;
+; -3.643 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.683      ;
+; -3.640 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.681      ;
+; -3.612 ; latch1:inst5|Q[3] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.648      ;
+; -3.612 ; latch1:inst5|Q[0] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.649      ;
+; -3.610 ; latch1:inst5|Q[2] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.647      ;
+; -3.592 ; latch1:inst4|Q[1] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.628      ;
+; -3.590 ; latch1:inst4|Q[1] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.627      ;
+; -3.587 ; latch1:inst4|Q[0] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.624      ;
+; -3.584 ; latch1:inst5|Q[4] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.620      ;
+; -3.573 ; latch1:inst5|Q[0] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.610      ;
+; -3.572 ; latch1:inst4|Q[3] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.609      ;
+; -3.553 ; latch1:inst4|Q[4] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.589      ;
+; -3.553 ; latch1:inst5|Q[3] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.590      ;
+; -3.544 ; latch1:inst5|Q[0] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.581      ;
+; -3.526 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.566      ;
+; -3.525 ; latch1:inst5|Q[1] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.562      ;
+; -3.523 ; latch1:inst4|Q[0] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.560      ;
+; -3.520 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.561      ;
+; -3.519 ; latch1:inst4|Q[0] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.556      ;
+; -3.517 ; latch1:inst4|Q[5] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.553      ;
+; -3.516 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.556      ;
+; -3.506 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.547      ;
+; -3.501 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.541      ;
+; -3.486 ; latch1:inst4|Q[2] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.523      ;
+; -3.485 ; latch1:inst5|Q[0] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.521      ;
+; -3.477 ; latch1:inst5|Q[5] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.513      ;
+; -3.464 ; latch1:inst5|Q[4] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.501      ;
+; -3.459 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.500      ;
+; -3.458 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.499      ;
+; -3.457 ; latch1:inst5|Q[1] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.494      ;
+; -3.455 ; latch1:inst5|Q[1] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.492      ;
+; -3.451 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.492      ;
+; -3.448 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.489      ;
+; -3.443 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.483      ;
+; -3.439 ; latch1:inst4|Q[6] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.475      ;
+; -3.436 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.477      ;
+; -3.435 ; latch1:inst4|Q[0] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.471      ;
+; -3.430 ; latch1:inst5|Q[2] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.467      ;
+; -3.418 ; latch1:inst4|Q[2] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.455      ;
+; -3.405 ; latch1:inst5|Q[6] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.441      ;
+; -3.403 ; fsm:inst1|yfsm.s3 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.443      ;
+; -3.398 ; latch1:inst4|Q[3] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.435      ;
+; -3.397 ; latch1:inst4|Q[2] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.434      ;
+; -3.393 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.434      ;
+; -3.391 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.432      ;
+; -3.388 ; latch1:inst4|Q[1] ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.425      ;
+; -3.383 ; latch1:inst5|Q[4] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.420      ;
+; -3.383 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.424      ;
+; -3.377 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.418      ;
+; -3.367 ; latch1:inst5|Q[1] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.403      ;
+; -3.361 ; latch1:inst4|Q[3] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.398      ;
+; -3.354 ; fsm:inst1|yfsm.s9 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.395      ;
+; -3.352 ; latch1:inst5|Q[3] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.389      ;
+; -3.346 ; latch1:inst4|Q[4] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.383      ;
+; -3.346 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.387      ;
+; -3.345 ; fsm:inst1|yfsm.s3 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.386      ;
+; -3.342 ; latch1:inst5|Q[2] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.378      ;
+; -3.342 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.383      ;
+; -3.338 ; latch1:inst4|Q[3] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.375      ;
+; -3.324 ; latch1:inst5|Q[4] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.361      ;
+; -3.319 ; latch1:inst5|Q[3] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.356      ;
+; -3.319 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.360      ;
+; -3.319 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.360      ;
+; -3.315 ; latch1:inst5|Q[3] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.352      ;
+; -3.310 ; latch1:inst4|Q[5] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.347      ;
+; -3.309 ; latch1:inst4|Q[2] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.345      ;
+; -3.305 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.346      ;
+; -3.293 ; latch1:inst4|Q[4] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.330      ;
+; -3.287 ; latch1:inst5|Q[4] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.324      ;
+; -3.281 ; latch1:inst5|Q[0] ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.318      ;
+; -3.273 ; latch1:inst4|Q[3] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 4.309      ;
+; -3.270 ; latch1:inst5|Q[5] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.307      ;
+; -3.266 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.307      ;
+; -3.266 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 4.307      ;
+; -3.262 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.302      ;
+; -3.261 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.004      ; 4.301      ;
+; -3.257 ; latch1:inst4|Q[5] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.294      ;
+; -3.256 ; latch1:inst4|Q[4] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.293      ;
+; -3.232 ; latch1:inst4|Q[6] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.269      ;
+; -3.231 ; latch1:inst4|Q[0] ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.268      ;
+; -3.230 ; latch1:inst4|Q[4] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 4.267      ;
++--------+-------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clock'                                                                                               ;
++-------+--------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 0.544 ; fsm:inst1|yfsm.s10 ; fsm:inst1|yfsm.s0   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.810      ;
+; 0.567 ; fsm:inst1|yfsm.s8  ; fsm:inst1|yfsm.s9   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.833      ;
+; 0.686 ; fsm:inst1|yfsm.s4  ; fsm:inst1|yfsm.s5   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.952      ;
+; 0.690 ; fsm:inst1|yfsm.s5  ; fsm:inst1|yfsm.s6   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.956      ;
+; 0.691 ; fsm:inst1|yfsm.s7  ; fsm:inst1|yfsm.s8   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.957      ;
+; 0.693 ; fsm:inst1|yfsm.s0  ; fsm:inst1|yfsm.s1   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.959      ;
+; 0.721 ; fsm:inst1|yfsm.s2  ; fsm:inst1|yfsm.s3   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.987      ;
+; 0.832 ; fsm:inst1|yfsm.s9  ; fsm:inst1|yfsm.s10  ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.098      ;
+; 0.859 ; fsm:inst1|yfsm.s3  ; fsm:inst1|yfsm.s4   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.125      ;
+; 0.862 ; fsm:inst1|yfsm.s6  ; fsm:inst1|yfsm.s7   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.128      ;
+; 0.868 ; fsm:inst1|yfsm.s1  ; fsm:inst1|yfsm.s2   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.134      ;
+; 0.878 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.149      ;
+; 0.878 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.149      ;
+; 0.894 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.159      ;
+; 1.123 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.394      ;
+; 1.123 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.394      ;
+; 1.143 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 1.413      ;
+; 1.192 ; ALU1:inst|Neg      ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.458      ;
+; 1.209 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.480      ;
+; 1.209 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.480      ;
+; 1.301 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.572      ;
+; 1.301 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.572      ;
+; 1.358 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.623      ;
+; 1.416 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.681      ;
+; 1.423 ; fsm:inst1|yfsm.s9  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.688      ;
+; 1.451 ; fsm:inst1|yfsm.s6  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.716      ;
+; 1.538 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 1.808      ;
+; 1.580 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.845      ;
+; 1.580 ; fsm:inst1|yfsm.s4  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.845      ;
+; 1.631 ; latch1:inst4|Q[2]  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.898      ;
+; 1.650 ; latch1:inst4|Q[7]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.916      ;
+; 1.697 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.962      ;
+; 1.698 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 1.968      ;
+; 1.716 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.981      ;
+; 1.721 ; latch1:inst5|Q[7]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.987      ;
+; 1.742 ; fsm:inst1|yfsm.s2  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.007      ;
+; 1.746 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.011      ;
+; 1.794 ; latch1:inst5|Q[2]  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.061      ;
+; 1.812 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.077      ;
+; 1.825 ; fsm:inst1|yfsm.s6  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.090      ;
+; 1.859 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.129      ;
+; 1.899 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.164      ;
+; 1.949 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.220      ;
+; 1.954 ; fsm:inst1|yfsm.s4  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.219      ;
+; 1.987 ; latch1:inst4|Q[7]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.248      ;
+; 1.987 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.257      ;
+; 2.007 ; latch1:inst5|Q[1]  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.273      ;
+; 2.024 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.295      ;
+; 2.071 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.336      ;
+; 2.096 ; latch1:inst4|Q[6]  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.363      ;
+; 2.116 ; fsm:inst1|yfsm.s2  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.381      ;
+; 2.195 ; latch1:inst4|Q[1]  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.461      ;
+; 2.196 ; latch1:inst4|Q[4]  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.463      ;
+; 2.244 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.515      ;
+; 2.261 ; latch1:inst5|Q[7]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.522      ;
+; 2.262 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.532      ;
+; 2.306 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.571      ;
+; 2.348 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.619      ;
+; 2.362 ; latch1:inst5|Q[4]  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.629      ;
+; 2.372 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.643      ;
+; 2.375 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.645      ;
+; 2.403 ; latch1:inst5|Q[3]  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.670      ;
+; 2.409 ; latch1:inst4|Q[0]  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.670      ;
+; 2.419 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.684      ;
+; 2.419 ; latch1:inst5|Q[0]  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.680      ;
+; 2.427 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.698      ;
+; 2.434 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.705      ;
+; 2.462 ; latch1:inst5|Q[6]  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.729      ;
+; 2.475 ; latch1:inst4|Q[3]  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 2.742      ;
+; 2.486 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.756      ;
+; 2.513 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.784      ;
+; 2.555 ; fsm:inst1|yfsm.s6  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.825      ;
+; 2.560 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.831      ;
+; 2.564 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.835      ;
+; 2.569 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.839      ;
+; 2.571 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.842      ;
+; 2.588 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.859      ;
+; 2.596 ; fsm:inst1|yfsm.s9  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 2.861      ;
+; 2.599 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.870      ;
+; 2.615 ; fsm:inst1|yfsm.s2  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.885      ;
+; 2.619 ; latch1:inst5|Q[6]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.885      ;
+; 2.626 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.897      ;
+; 2.645 ; latch1:inst5|Q[6]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.906      ;
+; 2.648 ; latch1:inst4|Q[7]  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.909      ;
+; 2.677 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.948      ;
+; 2.679 ; latch1:inst4|Q[6]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.940      ;
+; 2.684 ; fsm:inst1|yfsm.s4  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 2.954      ;
+; 2.701 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.972      ;
+; 2.703 ; latch1:inst4|Q[5]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.969      ;
+; 2.712 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.983      ;
+; 2.715 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 2.986      ;
+; 2.717 ; latch1:inst5|Q[5]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 2.978      ;
+; 2.728 ; latch1:inst5|Q[5]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.994      ;
+; 2.736 ; latch1:inst4|Q[5]  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 3.003      ;
+; 2.739 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.004      ; 3.009      ;
+; 2.757 ; latch1:inst4|Q[5]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 3.018      ;
+; 2.775 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 3.046      ;
+; 2.776 ; latch1:inst4|Q[4]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 3.042      ;
+; 2.786 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 3.057      ;
+; 2.793 ; latch1:inst4|Q[4]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.005     ; 3.054      ;
++-------+--------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clock'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clock ; Rise       ; Clock                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Neg          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Neg          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s0      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s0      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s1      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s1      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s10     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s10     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s2      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s2      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s3      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s3      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s4      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s4      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s5      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s5      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s6      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s6      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s7      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s7      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s8      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s8      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s9      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s9      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[7]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s10|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s10|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s6|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s6|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s7|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s7|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s8|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s8|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s9|clk      ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; A[*]           ; Clock      ; 4.735 ; 4.735 ; Rise       ; Clock           ;
+;  A[0]          ; Clock      ; 0.972 ; 0.972 ; Rise       ; Clock           ;
+;  A[1]          ; Clock      ; 0.066 ; 0.066 ; Rise       ; Clock           ;
+;  A[2]          ; Clock      ; 0.123 ; 0.123 ; Rise       ; Clock           ;
+;  A[3]          ; Clock      ; 0.116 ; 0.116 ; Rise       ; Clock           ;
+;  A[4]          ; Clock      ; 0.024 ; 0.024 ; Rise       ; Clock           ;
+;  A[5]          ; Clock      ; 1.039 ; 1.039 ; Rise       ; Clock           ;
+;  A[6]          ; Clock      ; 0.653 ; 0.653 ; Rise       ; Clock           ;
+;  A[7]          ; Clock      ; 4.735 ; 4.735 ; Rise       ; Clock           ;
+; B[*]           ; Clock      ; 4.733 ; 4.733 ; Rise       ; Clock           ;
+;  B[0]          ; Clock      ; 4.703 ; 4.703 ; Rise       ; Clock           ;
+;  B[1]          ; Clock      ; 4.733 ; 4.733 ; Rise       ; Clock           ;
+;  B[2]          ; Clock      ; 4.492 ; 4.492 ; Rise       ; Clock           ;
+;  B[3]          ; Clock      ; 1.140 ; 1.140 ; Rise       ; Clock           ;
+;  B[4]          ; Clock      ; 0.619 ; 0.619 ; Rise       ; Clock           ;
+;  B[5]          ; Clock      ; 0.654 ; 0.654 ; Rise       ; Clock           ;
+;  B[6]          ; Clock      ; 1.100 ; 1.100 ; Rise       ; Clock           ;
+;  B[7]          ; Clock      ; 1.076 ; 1.076 ; Rise       ; Clock           ;
+; Enable_Decoder ; Clock      ; 6.741 ; 6.741 ; Rise       ; Clock           ;
+; data_in        ; Clock      ; 4.603 ; 4.603 ; Rise       ; Clock           ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; A[*]           ; Clock      ; 0.206  ; 0.206  ; Rise       ; Clock           ;
+;  A[0]          ; Clock      ; -0.742 ; -0.742 ; Rise       ; Clock           ;
+;  A[1]          ; Clock      ; 0.164  ; 0.164  ; Rise       ; Clock           ;
+;  A[2]          ; Clock      ; 0.107  ; 0.107  ; Rise       ; Clock           ;
+;  A[3]          ; Clock      ; 0.114  ; 0.114  ; Rise       ; Clock           ;
+;  A[4]          ; Clock      ; 0.206  ; 0.206  ; Rise       ; Clock           ;
+;  A[5]          ; Clock      ; -0.809 ; -0.809 ; Rise       ; Clock           ;
+;  A[6]          ; Clock      ; -0.423 ; -0.423 ; Rise       ; Clock           ;
+;  A[7]          ; Clock      ; -4.505 ; -4.505 ; Rise       ; Clock           ;
+; B[*]           ; Clock      ; -0.389 ; -0.389 ; Rise       ; Clock           ;
+;  B[0]          ; Clock      ; -4.473 ; -4.473 ; Rise       ; Clock           ;
+;  B[1]          ; Clock      ; -4.503 ; -4.503 ; Rise       ; Clock           ;
+;  B[2]          ; Clock      ; -4.262 ; -4.262 ; Rise       ; Clock           ;
+;  B[3]          ; Clock      ; -0.910 ; -0.910 ; Rise       ; Clock           ;
+;  B[4]          ; Clock      ; -0.389 ; -0.389 ; Rise       ; Clock           ;
+;  B[5]          ; Clock      ; -0.424 ; -0.424 ; Rise       ; Clock           ;
+;  B[6]          ; Clock      ; -0.870 ; -0.870 ; Rise       ; Clock           ;
+;  B[7]          ; Clock      ; -0.846 ; -0.846 ; Rise       ; Clock           ;
+; Enable_Decoder ; Clock      ; -3.748 ; -3.748 ; Rise       ; Clock           ;
+; data_in        ; Clock      ; -4.373 ; -4.373 ; Rise       ; Clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; R_first_four[*]  ; Clock      ; 9.019 ; 9.019 ; Rise       ; Clock           ;
+;  R_first_four[0] ; Clock      ; 9.019 ; 9.019 ; Rise       ; Clock           ;
+;  R_first_four[1] ; Clock      ; 8.989 ; 8.989 ; Rise       ; Clock           ;
+;  R_first_four[2] ; Clock      ; 8.978 ; 8.978 ; Rise       ; Clock           ;
+;  R_first_four[3] ; Clock      ; 8.769 ; 8.769 ; Rise       ; Clock           ;
+;  R_first_four[4] ; Clock      ; 8.773 ; 8.773 ; Rise       ; Clock           ;
+;  R_first_four[5] ; Clock      ; 8.731 ; 8.731 ; Rise       ; Clock           ;
+;  R_first_four[6] ; Clock      ; 8.754 ; 8.754 ; Rise       ; Clock           ;
+; R_last_four[*]   ; Clock      ; 8.671 ; 8.671 ; Rise       ; Clock           ;
+;  R_last_four[0]  ; Clock      ; 8.657 ; 8.657 ; Rise       ; Clock           ;
+;  R_last_four[1]  ; Clock      ; 8.671 ; 8.671 ; Rise       ; Clock           ;
+;  R_last_four[2]  ; Clock      ; 8.415 ; 8.415 ; Rise       ; Clock           ;
+;  R_last_four[3]  ; Clock      ; 8.479 ; 8.479 ; Rise       ; Clock           ;
+;  R_last_four[4]  ; Clock      ; 8.541 ; 8.541 ; Rise       ; Clock           ;
+;  R_last_four[5]  ; Clock      ; 8.209 ; 8.209 ; Rise       ; Clock           ;
+;  R_last_four[6]  ; Clock      ; 8.264 ; 8.264 ; Rise       ; Clock           ;
+; Sign[*]          ; Clock      ; 7.509 ; 7.509 ; Rise       ; Clock           ;
+;  Sign[6]         ; Clock      ; 7.509 ; 7.509 ; Rise       ; Clock           ;
+; student_id[*]    ; Clock      ; 9.288 ; 9.288 ; Rise       ; Clock           ;
+;  student_id[0]   ; Clock      ; 9.288 ; 9.288 ; Rise       ; Clock           ;
+;  student_id[1]   ; Clock      ; 9.012 ; 9.012 ; Rise       ; Clock           ;
+;  student_id[2]   ; Clock      ; 7.210 ; 7.210 ; Rise       ; Clock           ;
+;  student_id[3]   ; Clock      ; 8.569 ; 8.569 ; Rise       ; Clock           ;
+;  student_id[4]   ; Clock      ; 8.674 ; 8.674 ; Rise       ; Clock           ;
+;  student_id[5]   ; Clock      ; 9.179 ; 9.179 ; Rise       ; Clock           ;
+;  student_id[6]   ; Clock      ; 8.531 ; 8.531 ; Rise       ; Clock           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; R_first_four[*]  ; Clock      ; 8.324 ; 8.324 ; Rise       ; Clock           ;
+;  R_first_four[0] ; Clock      ; 8.586 ; 8.586 ; Rise       ; Clock           ;
+;  R_first_four[1] ; Clock      ; 8.554 ; 8.554 ; Rise       ; Clock           ;
+;  R_first_four[2] ; Clock      ; 8.567 ; 8.567 ; Rise       ; Clock           ;
+;  R_first_four[3] ; Clock      ; 8.339 ; 8.339 ; Rise       ; Clock           ;
+;  R_first_four[4] ; Clock      ; 8.339 ; 8.339 ; Rise       ; Clock           ;
+;  R_first_four[5] ; Clock      ; 8.329 ; 8.329 ; Rise       ; Clock           ;
+;  R_first_four[6] ; Clock      ; 8.324 ; 8.324 ; Rise       ; Clock           ;
+; R_last_four[*]   ; Clock      ; 7.792 ; 7.792 ; Rise       ; Clock           ;
+;  R_last_four[0]  ; Clock      ; 8.239 ; 8.239 ; Rise       ; Clock           ;
+;  R_last_four[1]  ; Clock      ; 8.255 ; 8.255 ; Rise       ; Clock           ;
+;  R_last_four[2]  ; Clock      ; 7.998 ; 7.998 ; Rise       ; Clock           ;
+;  R_last_four[3]  ; Clock      ; 8.063 ; 8.063 ; Rise       ; Clock           ;
+;  R_last_four[4]  ; Clock      ; 8.116 ; 8.116 ; Rise       ; Clock           ;
+;  R_last_four[5]  ; Clock      ; 7.792 ; 7.792 ; Rise       ; Clock           ;
+;  R_last_four[6]  ; Clock      ; 7.848 ; 7.848 ; Rise       ; Clock           ;
+; Sign[*]          ; Clock      ; 7.509 ; 7.509 ; Rise       ; Clock           ;
+;  Sign[6]         ; Clock      ; 7.509 ; 7.509 ; Rise       ; Clock           ;
+; student_id[*]    ; Clock      ; 6.986 ; 6.986 ; Rise       ; Clock           ;
+;  student_id[0]   ; Clock      ; 7.733 ; 7.733 ; Rise       ; Clock           ;
+;  student_id[1]   ; Clock      ; 7.636 ; 7.636 ; Rise       ; Clock           ;
+;  student_id[2]   ; Clock      ; 7.210 ; 7.210 ; Rise       ; Clock           ;
+;  student_id[3]   ; Clock      ; 7.014 ; 7.014 ; Rise       ; Clock           ;
+;  student_id[4]   ; Clock      ; 7.860 ; 7.860 ; Rise       ; Clock           ;
+;  student_id[5]   ; Clock      ; 7.944 ; 7.944 ; Rise       ; Clock           ;
+;  student_id[6]   ; Clock      ; 6.986 ; 6.986 ; Rise       ; Clock           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clock ; -1.154 ; -8.608        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; Clock ; 0.267 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; Clock ; -1.380 ; -37.380               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clock'                                                                                              ;
++--------+-------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -1.154 ; latch1:inst4|Q[1] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.185      ;
+; -1.115 ; latch1:inst5|Q[0] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.146      ;
+; -1.098 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.133      ;
+; -1.088 ; latch1:inst5|Q[2] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.121      ;
+; -1.087 ; latch1:inst4|Q[0] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.118      ;
+; -1.075 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.112      ;
+; -1.070 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.105      ;
+; -1.069 ; latch1:inst4|Q[1] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.102      ;
+; -1.063 ; latch1:inst5|Q[0] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.096      ;
+; -1.059 ; latch1:inst5|Q[1] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.090      ;
+; -1.057 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.092      ;
+; -1.052 ; latch1:inst4|Q[0] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.085      ;
+; -1.047 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.084      ;
+; -1.044 ; latch1:inst5|Q[2] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.075      ;
+; -1.038 ; latch1:inst4|Q[1] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.071      ;
+; -1.031 ; latch1:inst4|Q[1] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.064      ;
+; -1.027 ; latch1:inst4|Q[2] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.058      ;
+; -1.026 ; latch1:inst5|Q[1] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.059      ;
+; -1.009 ; latch1:inst5|Q[2] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.042      ;
+; -1.008 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.045      ;
+; -1.005 ; latch1:inst4|Q[3] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.036      ;
+; -1.002 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.037      ;
+; -0.999 ; latch1:inst4|Q[2] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.032      ;
+; -0.999 ; latch1:inst5|Q[0] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.032      ;
+; -0.998 ; latch1:inst4|Q[1] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.029      ;
+; -0.997 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.032      ;
+; -0.994 ; latch1:inst5|Q[2] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.027      ;
+; -0.993 ; latch1:inst4|Q[1] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.026      ;
+; -0.992 ; latch1:inst5|Q[0] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.025      ;
+; -0.989 ; latch1:inst5|Q[3] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.020      ;
+; -0.986 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.023      ;
+; -0.974 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.011      ;
+; -0.974 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.009      ;
+; -0.974 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 2.009      ;
+; -0.973 ; latch1:inst4|Q[0] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.006      ;
+; -0.972 ; latch1:inst5|Q[4] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 2.003      ;
+; -0.972 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.009      ;
+; -0.971 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 2.008      ;
+; -0.969 ; latch1:inst5|Q[0] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 2.002      ;
+; -0.964 ; latch1:inst4|Q[0] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.997      ;
+; -0.960 ; latch1:inst4|Q[3] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.993      ;
+; -0.959 ; latch1:inst5|Q[0] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.990      ;
+; -0.958 ; latch1:inst4|Q[4] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.989      ;
+; -0.958 ; latch1:inst5|Q[3] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.991      ;
+; -0.958 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.995      ;
+; -0.958 ; latch1:inst4|Q[0] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.991      ;
+; -0.954 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.991      ;
+; -0.947 ; latch1:inst5|Q[1] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.980      ;
+; -0.946 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.983      ;
+; -0.941 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.978      ;
+; -0.940 ; fsm:inst1|yfsm.s3 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 1.975      ;
+; -0.936 ; latch1:inst4|Q[5] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.967      ;
+; -0.936 ; latch1:inst5|Q[1] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.969      ;
+; -0.934 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.971      ;
+; -0.932 ; latch1:inst5|Q[1] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.965      ;
+; -0.931 ; latch1:inst4|Q[0] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.962      ;
+; -0.926 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.963      ;
+; -0.923 ; latch1:inst5|Q[5] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.954      ;
+; -0.921 ; latch1:inst5|Q[2] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.954      ;
+; -0.920 ; latch1:inst4|Q[2] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.953      ;
+; -0.920 ; fsm:inst1|yfsm.s9 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.957      ;
+; -0.919 ; fsm:inst1|yfsm.s2 ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.956      ;
+; -0.918 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.955      ;
+; -0.917 ; fsm:inst1|yfsm.s3 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.954      ;
+; -0.916 ; latch1:inst5|Q[4] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.949      ;
+; -0.905 ; latch1:inst5|Q[4] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.938      ;
+; -0.905 ; latch1:inst4|Q[2] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.938      ;
+; -0.904 ; latch1:inst4|Q[2] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.937      ;
+; -0.903 ; latch1:inst5|Q[1] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.934      ;
+; -0.901 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 1.936      ;
+; -0.901 ; fsm:inst1|yfsm.s8 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 1.936      ;
+; -0.898 ; latch1:inst4|Q[6] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.929      ;
+; -0.897 ; latch1:inst4|Q[1] ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.930      ;
+; -0.891 ; fsm:inst1|yfsm.s6 ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.928      ;
+; -0.889 ; latch1:inst4|Q[3] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.922      ;
+; -0.889 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.926      ;
+; -0.888 ; latch1:inst5|Q[6] ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.919      ;
+; -0.888 ; latch1:inst5|Q[2] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.919      ;
+; -0.888 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.925      ;
+; -0.885 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.922      ;
+; -0.882 ; latch1:inst4|Q[3] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.915      ;
+; -0.873 ; latch1:inst4|Q[4] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.906      ;
+; -0.873 ; latch1:inst5|Q[3] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.906      ;
+; -0.871 ; latch1:inst4|Q[2] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.902      ;
+; -0.866 ; latch1:inst5|Q[3] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.899      ;
+; -0.866 ; latch1:inst4|Q[3] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.899      ;
+; -0.864 ; latch1:inst5|Q[3] ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.897      ;
+; -0.858 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.895      ;
+; -0.858 ; latch1:inst5|Q[0] ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.891      ;
+; -0.856 ; latch1:inst5|Q[4] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.889      ;
+; -0.853 ; fsm:inst1|yfsm.s7 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.890      ;
+; -0.851 ; latch1:inst4|Q[5] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.884      ;
+; -0.851 ; fsm:inst1|yfsm.s4 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.005      ; 1.888      ;
+; -0.849 ; latch1:inst5|Q[4] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.882      ;
+; -0.849 ; latch1:inst4|Q[3] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.880      ;
+; -0.844 ; fsm:inst1|yfsm.s3 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; 0.003      ; 1.879      ;
+; -0.842 ; latch1:inst4|Q[4] ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.875      ;
+; -0.838 ; latch1:inst5|Q[5] ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.871      ;
+; -0.835 ; latch1:inst4|Q[4] ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 1.000        ; 0.001      ; 1.868      ;
+; -0.833 ; latch1:inst5|Q[3] ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 1.000        ; -0.001     ; 1.864      ;
++--------+-------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clock'                                                                                               ;
++-------+--------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 0.267 ; fsm:inst1|yfsm.s8  ; fsm:inst1|yfsm.s9   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.419      ;
+; 0.273 ; fsm:inst1|yfsm.s10 ; fsm:inst1|yfsm.s0   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.425      ;
+; 0.312 ; fsm:inst1|yfsm.s0  ; fsm:inst1|yfsm.s1   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.464      ;
+; 0.342 ; fsm:inst1|yfsm.s5  ; fsm:inst1|yfsm.s6   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.494      ;
+; 0.342 ; fsm:inst1|yfsm.s7  ; fsm:inst1|yfsm.s8   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.494      ;
+; 0.343 ; fsm:inst1|yfsm.s4  ; fsm:inst1|yfsm.s5   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.495      ;
+; 0.361 ; fsm:inst1|yfsm.s2  ; fsm:inst1|yfsm.s3   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.404 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.556      ;
+; 0.414 ; fsm:inst1|yfsm.s9  ; fsm:inst1|yfsm.s10  ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.566      ;
+; 0.414 ; fsm:inst1|yfsm.s3  ; fsm:inst1|yfsm.s4   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.566      ;
+; 0.418 ; fsm:inst1|yfsm.s6  ; fsm:inst1|yfsm.s7   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.570      ;
+; 0.419 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.576      ;
+; 0.419 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.576      ;
+; 0.421 ; fsm:inst1|yfsm.s1  ; fsm:inst1|yfsm.s2   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.573      ;
+; 0.512 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.669      ;
+; 0.512 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.669      ;
+; 0.527 ; ALU1:inst|Neg      ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.679      ;
+; 0.545 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 0.700      ;
+; 0.559 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.716      ;
+; 0.559 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.716      ;
+; 0.601 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.758      ;
+; 0.602 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 0.759      ;
+; 0.602 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.754      ;
+; 0.617 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.769      ;
+; 0.639 ; fsm:inst1|yfsm.s6  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.791      ;
+; 0.646 ; fsm:inst1|yfsm.s9  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.798      ;
+; 0.695 ; fsm:inst1|yfsm.s4  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.847      ;
+; 0.707 ; latch1:inst4|Q[2]  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 0.860      ;
+; 0.710 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.862      ;
+; 0.710 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 0.865      ;
+; 0.731 ; latch1:inst4|Q[7]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 0.882      ;
+; 0.763 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.915      ;
+; 0.774 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.926      ;
+; 0.778 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.930      ;
+; 0.778 ; latch1:inst5|Q[7]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 0.929      ;
+; 0.779 ; latch1:inst5|Q[2]  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 0.932      ;
+; 0.788 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 0.943      ;
+; 0.790 ; fsm:inst1|yfsm.s2  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.942      ;
+; 0.810 ; fsm:inst1|yfsm.s6  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.962      ;
+; 0.832 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.984      ;
+; 0.847 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.002      ;
+; 0.848 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.000      ;
+; 0.866 ; fsm:inst1|yfsm.s4  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.018      ;
+; 0.868 ; latch1:inst4|Q[7]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.016      ;
+; 0.880 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.035      ;
+; 0.881 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.038      ;
+; 0.887 ; latch1:inst5|Q[1]  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.038      ;
+; 0.914 ; latch1:inst4|Q[6]  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.067      ;
+; 0.935 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.092      ;
+; 0.948 ; latch1:inst4|Q[4]  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.101      ;
+; 0.949 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.101      ;
+; 0.949 ; latch1:inst4|Q[1]  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.100      ;
+; 0.961 ; fsm:inst1|yfsm.s2  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.113      ;
+; 0.990 ; latch1:inst5|Q[7]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.138      ;
+; 0.998 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.153      ;
+; 1.000 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.152      ;
+; 1.028 ; fsm:inst1|yfsm.s0  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.185      ;
+; 1.036 ; latch1:inst5|Q[4]  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.189      ;
+; 1.046 ; latch1:inst5|Q[3]  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.199      ;
+; 1.050 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.207      ;
+; 1.053 ; latch1:inst4|Q[0]  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.201      ;
+; 1.055 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.210      ;
+; 1.057 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.209      ;
+; 1.061 ; fsm:inst1|yfsm.s1  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.218      ;
+; 1.061 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.218      ;
+; 1.070 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.227      ;
+; 1.071 ; latch1:inst5|Q[6]  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.224      ;
+; 1.073 ; latch1:inst4|Q[3]  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.226      ;
+; 1.084 ; latch1:inst5|Q[0]  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.232      ;
+; 1.091 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.248      ;
+; 1.114 ; fsm:inst1|yfsm.s10 ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.269      ;
+; 1.123 ; latch1:inst5|Q[6]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.274      ;
+; 1.125 ; fsm:inst1|yfsm.s6  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.280      ;
+; 1.125 ; latch1:inst5|Q[6]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.273      ;
+; 1.133 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.290      ;
+; 1.134 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.291      ;
+; 1.134 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.291      ;
+; 1.135 ; latch1:inst4|Q[6]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.283      ;
+; 1.136 ; fsm:inst1|yfsm.s9  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.288      ;
+; 1.140 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.295      ;
+; 1.143 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[6] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.300      ;
+; 1.145 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.302      ;
+; 1.147 ; latch1:inst4|Q[7]  ; ALU1:inst|Result[0] ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.295      ;
+; 1.148 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.305      ;
+; 1.156 ; fsm:inst1|yfsm.s2  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.311      ;
+; 1.160 ; latch1:inst5|Q[5]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.308      ;
+; 1.165 ; latch1:inst4|Q[5]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.316      ;
+; 1.171 ; fsm:inst1|yfsm.s8  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.328      ;
+; 1.171 ; latch1:inst5|Q[5]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.322      ;
+; 1.173 ; latch1:inst4|Q[5]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.321      ;
+; 1.176 ; latch1:inst4|Q[5]  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.329      ;
+; 1.179 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[4] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.336      ;
+; 1.181 ; fsm:inst1|yfsm.s4  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.336      ;
+; 1.186 ; fsm:inst1|yfsm.s3  ; ALU1:inst|Result[1] ; Clock        ; Clock       ; 0.000        ; 0.003      ; 1.341      ;
+; 1.190 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[3] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.347      ;
+; 1.195 ; latch1:inst4|Q[4]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.343      ;
+; 1.200 ; latch1:inst4|Q[4]  ; ALU1:inst|Result[7] ; Clock        ; Clock       ; 0.000        ; -0.001     ; 1.351      ;
+; 1.202 ; fsm:inst1|yfsm.s7  ; ALU1:inst|Result[2] ; Clock        ; Clock       ; 0.000        ; 0.005      ; 1.359      ;
+; 1.209 ; latch1:inst5|Q[4]  ; ALU1:inst|Neg       ; Clock        ; Clock       ; 0.000        ; -0.004     ; 1.357      ;
+; 1.215 ; latch1:inst5|Q[5]  ; ALU1:inst|Result[5] ; Clock        ; Clock       ; 0.000        ; 0.001      ; 1.368      ;
++-------+--------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clock'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clock ; Rise       ; Clock                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Neg          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Neg          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; ALU1:inst|Result[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; ALU1:inst|Result[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s0      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s0      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s1      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s1      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s10     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s10     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s2      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s2      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s3      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s3      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s4      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s4      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s5      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s5      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s6      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s6      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s7      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s7      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s8      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s8      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; fsm:inst1|yfsm.s9      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; fsm:inst1|yfsm.s9      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst4|Q[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst4|Q[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; latch1:inst5|Q[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; latch1:inst5|Q[7]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s0|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s10|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s10|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s1|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s2|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s3|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s4|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s5|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s6|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s6|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s7|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s7|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s8|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst1|yfsm.s8|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst1|yfsm.s9|clk      ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; A[*]           ; Clock      ; 2.566  ; 2.566  ; Rise       ; Clock           ;
+;  A[0]          ; Clock      ; 0.323  ; 0.323  ; Rise       ; Clock           ;
+;  A[1]          ; Clock      ; -0.277 ; -0.277 ; Rise       ; Clock           ;
+;  A[2]          ; Clock      ; -0.207 ; -0.207 ; Rise       ; Clock           ;
+;  A[3]          ; Clock      ; -0.200 ; -0.200 ; Rise       ; Clock           ;
+;  A[4]          ; Clock      ; -0.274 ; -0.274 ; Rise       ; Clock           ;
+;  A[5]          ; Clock      ; 0.283  ; 0.283  ; Rise       ; Clock           ;
+;  A[6]          ; Clock      ; 0.091  ; 0.091  ; Rise       ; Clock           ;
+;  A[7]          ; Clock      ; 2.566  ; 2.566  ; Rise       ; Clock           ;
+; B[*]           ; Clock      ; 2.561  ; 2.561  ; Rise       ; Clock           ;
+;  B[0]          ; Clock      ; 2.534  ; 2.534  ; Rise       ; Clock           ;
+;  B[1]          ; Clock      ; 2.561  ; 2.561  ; Rise       ; Clock           ;
+;  B[2]          ; Clock      ; 2.450  ; 2.450  ; Rise       ; Clock           ;
+;  B[3]          ; Clock      ; 0.346  ; 0.346  ; Rise       ; Clock           ;
+;  B[4]          ; Clock      ; 0.095  ; 0.095  ; Rise       ; Clock           ;
+;  B[5]          ; Clock      ; 0.109  ; 0.109  ; Rise       ; Clock           ;
+;  B[6]          ; Clock      ; 0.365  ; 0.365  ; Rise       ; Clock           ;
+;  B[7]          ; Clock      ; 0.327  ; 0.327  ; Rise       ; Clock           ;
+; Enable_Decoder ; Clock      ; 3.339  ; 3.339  ; Rise       ; Clock           ;
+; data_in        ; Clock      ; 2.534  ; 2.534  ; Rise       ; Clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; A[*]           ; Clock      ; 0.397  ; 0.397  ; Rise       ; Clock           ;
+;  A[0]          ; Clock      ; -0.203 ; -0.203 ; Rise       ; Clock           ;
+;  A[1]          ; Clock      ; 0.397  ; 0.397  ; Rise       ; Clock           ;
+;  A[2]          ; Clock      ; 0.327  ; 0.327  ; Rise       ; Clock           ;
+;  A[3]          ; Clock      ; 0.320  ; 0.320  ; Rise       ; Clock           ;
+;  A[4]          ; Clock      ; 0.394  ; 0.394  ; Rise       ; Clock           ;
+;  A[5]          ; Clock      ; -0.163 ; -0.163 ; Rise       ; Clock           ;
+;  A[6]          ; Clock      ; 0.029  ; 0.029  ; Rise       ; Clock           ;
+;  A[7]          ; Clock      ; -2.446 ; -2.446 ; Rise       ; Clock           ;
+; B[*]           ; Clock      ; 0.025  ; 0.025  ; Rise       ; Clock           ;
+;  B[0]          ; Clock      ; -2.414 ; -2.414 ; Rise       ; Clock           ;
+;  B[1]          ; Clock      ; -2.441 ; -2.441 ; Rise       ; Clock           ;
+;  B[2]          ; Clock      ; -2.330 ; -2.330 ; Rise       ; Clock           ;
+;  B[3]          ; Clock      ; -0.226 ; -0.226 ; Rise       ; Clock           ;
+;  B[4]          ; Clock      ; 0.025  ; 0.025  ; Rise       ; Clock           ;
+;  B[5]          ; Clock      ; 0.011  ; 0.011  ; Rise       ; Clock           ;
+;  B[6]          ; Clock      ; -0.245 ; -0.245 ; Rise       ; Clock           ;
+;  B[7]          ; Clock      ; -0.207 ; -0.207 ; Rise       ; Clock           ;
+; Enable_Decoder ; Clock      ; -2.055 ; -2.055 ; Rise       ; Clock           ;
+; data_in        ; Clock      ; -2.414 ; -2.414 ; Rise       ; Clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; R_first_four[*]  ; Clock      ; 4.876 ; 4.876 ; Rise       ; Clock           ;
+;  R_first_four[0] ; Clock      ; 4.876 ; 4.876 ; Rise       ; Clock           ;
+;  R_first_four[1] ; Clock      ; 4.848 ; 4.848 ; Rise       ; Clock           ;
+;  R_first_four[2] ; Clock      ; 4.868 ; 4.868 ; Rise       ; Clock           ;
+;  R_first_four[3] ; Clock      ; 4.756 ; 4.756 ; Rise       ; Clock           ;
+;  R_first_four[4] ; Clock      ; 4.762 ; 4.762 ; Rise       ; Clock           ;
+;  R_first_four[5] ; Clock      ; 4.751 ; 4.751 ; Rise       ; Clock           ;
+;  R_first_four[6] ; Clock      ; 4.742 ; 4.742 ; Rise       ; Clock           ;
+; R_last_four[*]   ; Clock      ; 4.673 ; 4.673 ; Rise       ; Clock           ;
+;  R_last_four[0]  ; Clock      ; 4.664 ; 4.664 ; Rise       ; Clock           ;
+;  R_last_four[1]  ; Clock      ; 4.673 ; 4.673 ; Rise       ; Clock           ;
+;  R_last_four[2]  ; Clock      ; 4.504 ; 4.504 ; Rise       ; Clock           ;
+;  R_last_four[3]  ; Clock      ; 4.525 ; 4.525 ; Rise       ; Clock           ;
+;  R_last_four[4]  ; Clock      ; 4.569 ; 4.569 ; Rise       ; Clock           ;
+;  R_last_four[5]  ; Clock      ; 4.410 ; 4.410 ; Rise       ; Clock           ;
+;  R_last_four[6]  ; Clock      ; 4.452 ; 4.452 ; Rise       ; Clock           ;
+; Sign[*]          ; Clock      ; 4.118 ; 4.118 ; Rise       ; Clock           ;
+;  Sign[6]         ; Clock      ; 4.118 ; 4.118 ; Rise       ; Clock           ;
+; student_id[*]    ; Clock      ; 4.879 ; 4.879 ; Rise       ; Clock           ;
+;  student_id[0]   ; Clock      ; 4.879 ; 4.879 ; Rise       ; Clock           ;
+;  student_id[1]   ; Clock      ; 4.746 ; 4.746 ; Rise       ; Clock           ;
+;  student_id[2]   ; Clock      ; 3.984 ; 3.984 ; Rise       ; Clock           ;
+;  student_id[3]   ; Clock      ; 4.601 ; 4.601 ; Rise       ; Clock           ;
+;  student_id[4]   ; Clock      ; 4.603 ; 4.603 ; Rise       ; Clock           ;
+;  student_id[5]   ; Clock      ; 4.832 ; 4.832 ; Rise       ; Clock           ;
+;  student_id[6]   ; Clock      ; 4.567 ; 4.567 ; Rise       ; Clock           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; R_first_four[*]  ; Clock      ; 4.509 ; 4.509 ; Rise       ; Clock           ;
+;  R_first_four[0] ; Clock      ; 4.640 ; 4.640 ; Rise       ; Clock           ;
+;  R_first_four[1] ; Clock      ; 4.612 ; 4.612 ; Rise       ; Clock           ;
+;  R_first_four[2] ; Clock      ; 4.623 ; 4.623 ; Rise       ; Clock           ;
+;  R_first_four[3] ; Clock      ; 4.522 ; 4.522 ; Rise       ; Clock           ;
+;  R_first_four[4] ; Clock      ; 4.524 ; 4.524 ; Rise       ; Clock           ;
+;  R_first_four[5] ; Clock      ; 4.513 ; 4.513 ; Rise       ; Clock           ;
+;  R_first_four[6] ; Clock      ; 4.509 ; 4.509 ; Rise       ; Clock           ;
+; R_last_four[*]   ; Clock      ; 4.224 ; 4.224 ; Rise       ; Clock           ;
+;  R_last_four[0]  ; Clock      ; 4.476 ; 4.476 ; Rise       ; Clock           ;
+;  R_last_four[1]  ; Clock      ; 4.486 ; 4.486 ; Rise       ; Clock           ;
+;  R_last_four[2]  ; Clock      ; 4.315 ; 4.315 ; Rise       ; Clock           ;
+;  R_last_four[3]  ; Clock      ; 4.339 ; 4.339 ; Rise       ; Clock           ;
+;  R_last_four[4]  ; Clock      ; 4.382 ; 4.382 ; Rise       ; Clock           ;
+;  R_last_four[5]  ; Clock      ; 4.224 ; 4.224 ; Rise       ; Clock           ;
+;  R_last_four[6]  ; Clock      ; 4.262 ; 4.262 ; Rise       ; Clock           ;
+; Sign[*]          ; Clock      ; 4.118 ; 4.118 ; Rise       ; Clock           ;
+;  Sign[6]         ; Clock      ; 4.118 ; 4.118 ; Rise       ; Clock           ;
+; student_id[*]    ; Clock      ; 3.926 ; 3.926 ; Rise       ; Clock           ;
+;  student_id[0]   ; Clock      ; 4.232 ; 4.232 ; Rise       ; Clock           ;
+;  student_id[1]   ; Clock      ; 4.152 ; 4.152 ; Rise       ; Clock           ;
+;  student_id[2]   ; Clock      ; 3.984 ; 3.984 ; Rise       ; Clock           ;
+;  student_id[3]   ; Clock      ; 3.954 ; 3.954 ; Rise       ; Clock           ;
+;  student_id[4]   ; Clock      ; 4.262 ; 4.262 ; Rise       ; Clock           ;
+;  student_id[5]   ; Clock      ; 4.309 ; 4.309 ; Rise       ; Clock           ;
+;  student_id[6]   ; Clock      ; 3.926 ; 3.926 ; Rise       ; Clock           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.977  ; 0.267 ; N/A      ; N/A     ; -1.380              ;
+;  Clock           ; -3.977  ; 0.267 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -31.792 ; 0.0   ; 0.0      ; 0.0     ; -37.38              ;
+;  Clock           ; -31.792 ; 0.000 ; N/A      ; N/A     ; -37.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; A[*]           ; Clock      ; 4.735 ; 4.735 ; Rise       ; Clock           ;
+;  A[0]          ; Clock      ; 0.972 ; 0.972 ; Rise       ; Clock           ;
+;  A[1]          ; Clock      ; 0.066 ; 0.066 ; Rise       ; Clock           ;
+;  A[2]          ; Clock      ; 0.123 ; 0.123 ; Rise       ; Clock           ;
+;  A[3]          ; Clock      ; 0.116 ; 0.116 ; Rise       ; Clock           ;
+;  A[4]          ; Clock      ; 0.024 ; 0.024 ; Rise       ; Clock           ;
+;  A[5]          ; Clock      ; 1.039 ; 1.039 ; Rise       ; Clock           ;
+;  A[6]          ; Clock      ; 0.653 ; 0.653 ; Rise       ; Clock           ;
+;  A[7]          ; Clock      ; 4.735 ; 4.735 ; Rise       ; Clock           ;
+; B[*]           ; Clock      ; 4.733 ; 4.733 ; Rise       ; Clock           ;
+;  B[0]          ; Clock      ; 4.703 ; 4.703 ; Rise       ; Clock           ;
+;  B[1]          ; Clock      ; 4.733 ; 4.733 ; Rise       ; Clock           ;
+;  B[2]          ; Clock      ; 4.492 ; 4.492 ; Rise       ; Clock           ;
+;  B[3]          ; Clock      ; 1.140 ; 1.140 ; Rise       ; Clock           ;
+;  B[4]          ; Clock      ; 0.619 ; 0.619 ; Rise       ; Clock           ;
+;  B[5]          ; Clock      ; 0.654 ; 0.654 ; Rise       ; Clock           ;
+;  B[6]          ; Clock      ; 1.100 ; 1.100 ; Rise       ; Clock           ;
+;  B[7]          ; Clock      ; 1.076 ; 1.076 ; Rise       ; Clock           ;
+; Enable_Decoder ; Clock      ; 6.741 ; 6.741 ; Rise       ; Clock           ;
+; data_in        ; Clock      ; 4.603 ; 4.603 ; Rise       ; Clock           ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; A[*]           ; Clock      ; 0.397  ; 0.397  ; Rise       ; Clock           ;
+;  A[0]          ; Clock      ; -0.203 ; -0.203 ; Rise       ; Clock           ;
+;  A[1]          ; Clock      ; 0.397  ; 0.397  ; Rise       ; Clock           ;
+;  A[2]          ; Clock      ; 0.327  ; 0.327  ; Rise       ; Clock           ;
+;  A[3]          ; Clock      ; 0.320  ; 0.320  ; Rise       ; Clock           ;
+;  A[4]          ; Clock      ; 0.394  ; 0.394  ; Rise       ; Clock           ;
+;  A[5]          ; Clock      ; -0.163 ; -0.163 ; Rise       ; Clock           ;
+;  A[6]          ; Clock      ; 0.029  ; 0.029  ; Rise       ; Clock           ;
+;  A[7]          ; Clock      ; -2.446 ; -2.446 ; Rise       ; Clock           ;
+; B[*]           ; Clock      ; 0.025  ; 0.025  ; Rise       ; Clock           ;
+;  B[0]          ; Clock      ; -2.414 ; -2.414 ; Rise       ; Clock           ;
+;  B[1]          ; Clock      ; -2.441 ; -2.441 ; Rise       ; Clock           ;
+;  B[2]          ; Clock      ; -2.330 ; -2.330 ; Rise       ; Clock           ;
+;  B[3]          ; Clock      ; -0.226 ; -0.226 ; Rise       ; Clock           ;
+;  B[4]          ; Clock      ; 0.025  ; 0.025  ; Rise       ; Clock           ;
+;  B[5]          ; Clock      ; 0.011  ; 0.011  ; Rise       ; Clock           ;
+;  B[6]          ; Clock      ; -0.245 ; -0.245 ; Rise       ; Clock           ;
+;  B[7]          ; Clock      ; -0.207 ; -0.207 ; Rise       ; Clock           ;
+; Enable_Decoder ; Clock      ; -2.055 ; -2.055 ; Rise       ; Clock           ;
+; data_in        ; Clock      ; -2.414 ; -2.414 ; Rise       ; Clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; R_first_four[*]  ; Clock      ; 9.019 ; 9.019 ; Rise       ; Clock           ;
+;  R_first_four[0] ; Clock      ; 9.019 ; 9.019 ; Rise       ; Clock           ;
+;  R_first_four[1] ; Clock      ; 8.989 ; 8.989 ; Rise       ; Clock           ;
+;  R_first_four[2] ; Clock      ; 8.978 ; 8.978 ; Rise       ; Clock           ;
+;  R_first_four[3] ; Clock      ; 8.769 ; 8.769 ; Rise       ; Clock           ;
+;  R_first_four[4] ; Clock      ; 8.773 ; 8.773 ; Rise       ; Clock           ;
+;  R_first_four[5] ; Clock      ; 8.731 ; 8.731 ; Rise       ; Clock           ;
+;  R_first_four[6] ; Clock      ; 8.754 ; 8.754 ; Rise       ; Clock           ;
+; R_last_four[*]   ; Clock      ; 8.671 ; 8.671 ; Rise       ; Clock           ;
+;  R_last_four[0]  ; Clock      ; 8.657 ; 8.657 ; Rise       ; Clock           ;
+;  R_last_four[1]  ; Clock      ; 8.671 ; 8.671 ; Rise       ; Clock           ;
+;  R_last_four[2]  ; Clock      ; 8.415 ; 8.415 ; Rise       ; Clock           ;
+;  R_last_four[3]  ; Clock      ; 8.479 ; 8.479 ; Rise       ; Clock           ;
+;  R_last_four[4]  ; Clock      ; 8.541 ; 8.541 ; Rise       ; Clock           ;
+;  R_last_four[5]  ; Clock      ; 8.209 ; 8.209 ; Rise       ; Clock           ;
+;  R_last_four[6]  ; Clock      ; 8.264 ; 8.264 ; Rise       ; Clock           ;
+; Sign[*]          ; Clock      ; 7.509 ; 7.509 ; Rise       ; Clock           ;
+;  Sign[6]         ; Clock      ; 7.509 ; 7.509 ; Rise       ; Clock           ;
+; student_id[*]    ; Clock      ; 9.288 ; 9.288 ; Rise       ; Clock           ;
+;  student_id[0]   ; Clock      ; 9.288 ; 9.288 ; Rise       ; Clock           ;
+;  student_id[1]   ; Clock      ; 9.012 ; 9.012 ; Rise       ; Clock           ;
+;  student_id[2]   ; Clock      ; 7.210 ; 7.210 ; Rise       ; Clock           ;
+;  student_id[3]   ; Clock      ; 8.569 ; 8.569 ; Rise       ; Clock           ;
+;  student_id[4]   ; Clock      ; 8.674 ; 8.674 ; Rise       ; Clock           ;
+;  student_id[5]   ; Clock      ; 9.179 ; 9.179 ; Rise       ; Clock           ;
+;  student_id[6]   ; Clock      ; 8.531 ; 8.531 ; Rise       ; Clock           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; R_first_four[*]  ; Clock      ; 4.509 ; 4.509 ; Rise       ; Clock           ;
+;  R_first_four[0] ; Clock      ; 4.640 ; 4.640 ; Rise       ; Clock           ;
+;  R_first_four[1] ; Clock      ; 4.612 ; 4.612 ; Rise       ; Clock           ;
+;  R_first_four[2] ; Clock      ; 4.623 ; 4.623 ; Rise       ; Clock           ;
+;  R_first_four[3] ; Clock      ; 4.522 ; 4.522 ; Rise       ; Clock           ;
+;  R_first_four[4] ; Clock      ; 4.524 ; 4.524 ; Rise       ; Clock           ;
+;  R_first_four[5] ; Clock      ; 4.513 ; 4.513 ; Rise       ; Clock           ;
+;  R_first_four[6] ; Clock      ; 4.509 ; 4.509 ; Rise       ; Clock           ;
+; R_last_four[*]   ; Clock      ; 4.224 ; 4.224 ; Rise       ; Clock           ;
+;  R_last_four[0]  ; Clock      ; 4.476 ; 4.476 ; Rise       ; Clock           ;
+;  R_last_four[1]  ; Clock      ; 4.486 ; 4.486 ; Rise       ; Clock           ;
+;  R_last_four[2]  ; Clock      ; 4.315 ; 4.315 ; Rise       ; Clock           ;
+;  R_last_four[3]  ; Clock      ; 4.339 ; 4.339 ; Rise       ; Clock           ;
+;  R_last_four[4]  ; Clock      ; 4.382 ; 4.382 ; Rise       ; Clock           ;
+;  R_last_four[5]  ; Clock      ; 4.224 ; 4.224 ; Rise       ; Clock           ;
+;  R_last_four[6]  ; Clock      ; 4.262 ; 4.262 ; Rise       ; Clock           ;
+; Sign[*]          ; Clock      ; 4.118 ; 4.118 ; Rise       ; Clock           ;
+;  Sign[6]         ; Clock      ; 4.118 ; 4.118 ; Rise       ; Clock           ;
+; student_id[*]    ; Clock      ; 3.926 ; 3.926 ; Rise       ; Clock           ;
+;  student_id[0]   ; Clock      ; 4.232 ; 4.232 ; Rise       ; Clock           ;
+;  student_id[1]   ; Clock      ; 4.152 ; 4.152 ; Rise       ; Clock           ;
+;  student_id[2]   ; Clock      ; 3.984 ; 3.984 ; Rise       ; Clock           ;
+;  student_id[3]   ; Clock      ; 3.954 ; 3.954 ; Rise       ; Clock           ;
+;  student_id[4]   ; Clock      ; 4.262 ; 4.262 ; Rise       ; Clock           ;
+;  student_id[5]   ; Clock      ; 4.309 ; 4.309 ; Rise       ; Clock           ;
+;  student_id[6]   ; Clock      ; 3.926 ; 3.926 ; Rise       ; Clock           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clock      ; Clock    ; 910      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clock      ; Clock    ; 910      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 21    ; 21   ;
+; Unconstrained Input Port Paths  ; 63    ; 63   ;
+; Unconstrained Output Ports      ; 22    ; 22   ;
+; Unconstrained Output Port Paths ; 98    ; 98   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 29 14:25:30 2023
+Info: Command: quartus_sta problem1 -c problem1
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'problem1.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Clock Clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.977
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.977       -31.792 Clock 
+Info (332146): Worst-case hold slack is 0.544
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.544         0.000 Clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -37.380 Clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.154
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.154        -8.608 Clock 
+Info (332146): Worst-case hold slack is 0.267
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.267         0.000 Clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -37.380 Clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4551 megabytes
+    Info: Processing ended: Wed Nov 29 14:25:31 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\sahee\OneDrive\Desktop\COE328\Lab 6\latch\simulation\qsim
+vlatch1
+Z1 !s100 RZ8kMUBdonf=dIKSgD@K=1
+Z2 I3lO:YmjfoBWko3:FKc[oh0
+Z3 V2Lll@c=f>6G3nWhja9;F:3
+Z4 dC:\Users\sahee\OneDrive\Desktop\COE328\Lab 6\latch\simulation\qsim
+Z5 w1701668332
+Z6 8latch1.vo
+Z7 Flatch1.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|latch1.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1701668332.575000
+Z12 !s107 latch1.vo|
+!s101 -O0
+vlatch1_vlg_check_tst
+!i10b 1
+Z13 !s100 9[;;]3cgciOk4EzcA]GAJ2
+Z14 Im1=FQ9PgdK<n[FVb`^dLl2
+Z15 ViC7neldEST@S1?@D9Qch^0
+R4
+Z16 w1701668331
+Z17 8latch1.vt
+Z18 Flatch1.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1701668332.660000
+Z20 !s107 latch1.vt|
+Z21 !s90 -work|work|latch1.vt|
+!s101 -O0
+R10
+vlatch1_vlg_sample_tst
+!i10b 1
+Z22 !s100 mAHaJ5EiaAPH6:@IaMD;_0
+Z23 IFES>zGZISz^>iM>lR?7>33
+Z24 VijGFTm5Rl3TJMoU?;S>Bb0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vlatch1_vlg_vec_tst
+!i10b 1
+!s100 35@WPajLU:Q2DGPT<1`LA3
+IFffQ9@4]gL9<iPZVo6=1?2
+Z25 VA5RL8jHe=:6WkUNZBLF5O3
+R4
+R16
+R17
+R18
+Z26 L0 281
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
